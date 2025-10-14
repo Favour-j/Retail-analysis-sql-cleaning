@@ -1,10 +1,10 @@
-# 🛍️ Retail Sales Analysis (SQL Server)
+#  Retail Sales Analysis (SQL Server)
 
 This project explores **retail transaction data** to uncover customer behavior, top-performing product categories, seasonal trends, and order patterns across different times of the day. The analysis was done using **SQL Server (SSMS)** with T-SQL queries to answer business questions and deliver actionable insights.
 
 ---
 
-## 🧠 Business Problem
+##  Business Problem
 
 A retail store was experiencing **inconsistent monthly sales** and needed clear insights to:
 - Identify **which product categories drive the most revenue**
@@ -16,7 +16,7 @@ This project provides **data-driven insights** to help increase sales, optimize 
 
 ---
 
-## 📊 Dataset Overview
+##  Dataset Overview
 
 - **File:** `SQL - Retail Sales Analysis_utf .csv`  
 - **Records:** ~34,000 transactions  
@@ -35,7 +35,7 @@ This project provides **data-driven insights** to help increase sales, optimize 
 
 ---
 
-## 🧰 Tools Used
+##  Tools Used
 
 - SQL Server 2022 (SSMS)  
 - T-SQL for cleaning and analysis  
@@ -43,7 +43,7 @@ This project provides **data-driven insights** to help increase sales, optimize 
 
 ---
 
-## 🧼 Data Cleaning
+##  Data Cleaning
 
 ```sql
 -- 1) Inspect total rows
@@ -80,9 +80,9 @@ WHERE sale_date IS NULL
 
 ---
 
-## 🧮 Key Analysis Queries
+##  Key Analysis Queries
 
-### 1. 🛍️ Total Sales by Category
+### 1.  Total Sales by Category
 ```sql
 SELECT category,
        SUM(total_sale) AS net_sale,
@@ -91,21 +91,21 @@ FROM retail_sales
 GROUP BY category;
 ```
 
-### 2. 👥 Average Age of Customers in Beauty Category
+### 2.  Average Age of Customers in Beauty Category
 ```sql
 SELECT ROUND(AVG(age), 2) AS average_age
 FROM retail_sales
 WHERE category = 'Beauty';
 ```
 
-### 3. 💰 High-Value Transactions (>= 1000)
+### 3.  High-Value Transactions (>= 1000)
 ```sql
 SELECT *
 FROM retail_sales
 WHERE total_sale >= 1000;
 ```
 
-### 4. 🧮 Transactions by Gender and Category
+### 4.  Transactions by Gender and Category
 ```sql
 SELECT category,
        gender,
@@ -115,7 +115,7 @@ GROUP BY category, gender
 ORDER BY category;
 ```
 
-### 5. 🏆 Best Selling Month in Each Year
+### 5.  Best Selling Month in Each Year
 ```sql
 SELECT 
     year,
@@ -139,7 +139,7 @@ WHERE rank = 1
 ORDER BY year;
 ```
 
-### 6. 👑 Top 5 Customers by Total Sales
+### 6.  Top 5 Customers by Total Sales
 ```sql
 SELECT TOP 5
     customer_id,
@@ -149,7 +149,7 @@ GROUP BY customer_id
 ORDER BY total_sales DESC;
 ```
 
-### 7. 🧍 Unique Customers per Category
+### 7.  Unique Customers per Category
 ```sql
 SELECT 
     category,    
@@ -158,7 +158,7 @@ FROM retail_sales
 GROUP BY category;
 ```
 
-### 8. ⏰ Orders by Shift (Morning, Afternoon, Evening)
+### 8.  Orders by Shift (Morning, Afternoon, Evening)
 ```sql
 WITH hourly_sale AS
 (
@@ -180,28 +180,28 @@ ORDER BY total_orders DESC;
 
 ---
 
-## 📊 Business Insights
+##  Business Insights
 
-- 👚 **Clothing** is the top-performing category with the highest total sales.  
-- 🌞 **Afternoon (12 PM – 5 PM)** is the busiest shift—best time for promotions.  
-- 🏆 The **top 5 customers** account for a significant share of revenue.  
-- 🗓️ **November** consistently appears as a peak month.  
-- 💄 **Beauty** customers average in the mid-30s.  
-- 🧮 Shift and category patterns help optimize staffing, promotions, and inventory.
-
----
-
-## 🧭 Business Value
-
-- 📈 **Optimize marketing** by targeting peak hours and months.  
-- 🧑‍🤝‍🧑 **Increase retention** by identifying and rewarding high-value customers.  
-- 📦 **Improve inventory planning** with seasonal and category demand.  
-- 🧠 **Make data-driven decisions** for promos, pricing, and stock.  
-- 🎯 **Personalize offers** using demographic and category insights.
+-  **Clothing** is the top-performing category with the highest total sales.  
+-  **Afternoon (12 PM – 5 PM)** is the busiest shift—best time for promotions.  
+-  The **top 5 customers** account for a significant share of revenue.  
+-  **November** consistently appears as a peak month.  
+-  **Beauty** customers average in the mid-30s.  
+-  Shift and category patterns help optimize staffing, promotions, and inventory.
 
 ---
 
-## 🚀 Future Improvements
+##  Business Value
+
+-  **Optimize marketing** by targeting peak hours and months.  
+-  **Increase retention** by identifying and rewarding high-value customers.  
+-  **Improve inventory planning** with seasonal and category demand.  
+-  **Make data-driven decisions** for promos, pricing, and stock.  
+-  **Personalize offers** using demographic and category insights.
+
+---
+
+##  Future Improvements
 
 - Build Power BI / Tableau dashboard for visualization.  
 - Add stored procedures for recurring reports.  
@@ -210,12 +210,6 @@ ORDER BY total_orders DESC;
 
 ---
 
-## ✨ Author
 
-**Favour Jokparose**  
-Data Analyst | SQL | Power BI | Tableau | Excel  
-[LinkedIn](https://www.linkedin.com/in/favour-jokparose) • [GitHub](https://github.com/Favour-j)
-
----
 
 ⭐ If this project helped you, please consider giving it a **star** on GitHub!
