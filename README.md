@@ -75,6 +75,8 @@ WHERE sale_date IS NULL
    OR price_per_unit IS NULL 
    OR cogs IS NULL;
 
+---
+
 ##  📈 Key Analysis Queries
 
 1.  Total Sales by Category
@@ -157,6 +159,8 @@ FROM hourly_sale
 GROUP BY shift
 ORDER BY total_orders DESC;
 
+---
+
 ##  Business Insights 
 
 -  Clothing emerged as the top-performing category with the highest total sales.
@@ -171,8 +175,10 @@ ORDER BY total_orders DESC;
 
 -  Clear category-level performance and shift-based order trends can guide better marketing and inventory planning.
 
+---
 
 ##  Business Value
+
 This analysis helps the retail business:
 
 - Optimized marketing: Identify peak purchasing periods and launch targeted campaigns.
