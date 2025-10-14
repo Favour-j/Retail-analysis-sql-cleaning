@@ -76,8 +76,9 @@ WHERE sale_date IS NULL
    OR cogs IS NULL;
 
 ---
+---
 
-##  📈 Key Analysis Queries
+##    Key Analysis Queries
 
 1.  Total Sales by Category
 SELECT category,
@@ -160,6 +161,8 @@ GROUP BY shift
 ORDER BY total_orders DESC;
 
 ---
+---
+
 
 ##  Business Insights 
 
@@ -175,6 +178,7 @@ ORDER BY total_orders DESC;
 
 -  Clear category-level performance and shift-based order trends can guide better marketing and inventory planning.
 
+---
 ---
 
 ##  Business Value
